@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casa AI — Privacy Policy</title>
+<title>HomeGPT — Privacy Policy</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;
@@ -21,36 +21,49 @@
 </head>
 <body>
 
-<h1>Casa AI — Privacy Policy</h1>
-<p class="date">Last updated: 12 August 2026</p>
+<h1>HomeGPT — Privacy Policy</h1>
+<p class="date">Last updated: 7 October 2026</p>
 
 <div class="box">
-  <p><strong>The short version.</strong> Casa AI has no accounts and asks for no personal details.
-  The photo you choose is sent to our server, forwarded to our AI provider to be redesigned, and returned
-  to you. We do not keep a copy of your photo. We do not sell data to anyone.</p>
+  <p><strong>The short version.</strong> HomeGPT (AI Home Design) has no accounts and asks for no personal
+  details. The photo you choose is sent to our server, forwarded to our AI providers to be read and
+  redesigned, and the result is returned to you. We do not keep a copy of your photo. We do not sell data to
+  anyone.</p>
 </div>
 
 <h2>Photos you provide</h2>
-<p>When you use a tool, the photo you pick is uploaded over an encrypted connection to our server and passed
-straight to our image-generation provider, <a href="https://fal.ai">fal.ai</a>. Our server holds it only in
-memory for the duration of the request and never writes it to disk or to a database.</p>
-<p>The redesigned images that come back are hosted on fal.ai's content network at unguessable URLs so your
-device can download them. Casa AI then stores the results locally on your device. Deleting a design in the
-app removes it from your device.</p>
+<p>When you use a tool, the photo you pick is uploaded over an encrypted connection to our server. Our server
+holds it only in memory for the duration of the request and never writes it to disk or to a database. It
+passes the photo to two providers:</p>
+<ul>
+  <li><strong><a href="https://kie.ai">kie.ai</a></strong> generates the redesigned image. The photo is placed
+  in kie.ai's temporary file store, which deletes it after 24 hours, and the finished image is hosted at an
+  unguessable temporary address so your device can download it.</li>
+  <li><strong>Google (Gemini API)</strong> reads the room in your photo, and the finished design, to produce
+  the short notes the app shows you (room type, what was noticed, what is in the design).</li>
+</ul>
+<p>HomeGPT then stores the results on your device. For interior designs it also keeps the original photo on
+your device so you can compare before and after. Deleting a design in the app, or deleting the app, removes
+them.</p>
 
 <h2>Information collected automatically</h2>
 <ul>
-  <li><strong>Device identifier.</strong> We use the identifier Apple provides to apps from the same vendor
-  (<code>identifierForVendor</code>) to issue an access token and to apply a daily generation limit that keeps
-  costs and abuse under control. It is held in memory on our server for 24 hours and is not linked to you
-  personally.</li>
-  <li><strong>Subscription status.</strong> Purchases are processed by Apple and managed through
+  <li><strong>Device identifier.</strong> On iPhone we use the identifier Apple provides to apps from the same
+  vendor (<code>identifierForVendor</code>); on Android the app creates a random identifier the first time it
+  runs. It is used to issue an access token and to apply a daily generation limit that keeps costs and abuse
+  under control. It is held in memory on our server for 24 hours and is not linked to you personally.</li>
+  <li><strong>Subscription status.</strong> Purchases are processed by Apple or Google Play and managed through
   RevenueCat, which records an anonymous customer identifier and your subscription state.</li>
-  <li><strong>Configuration.</strong> Firebase Remote Config is used to choose which version of a screen to
-  show. It receives a Firebase installation identifier.</li>
-  <li><strong>Advertising attribution.</strong> If you arrived from an Apple Search Ads campaign, an Apple
-  AdServices token is passed to RevenueCat so we can tell which campaign the install came from. It contains
-  no personal information.</li>
+  <li><strong>Configuration, usage and crashes.</strong> Google Firebase is used to choose which version of a
+  screen to show (Remote Config), to count how the app is used (Analytics) and to receive crash reports
+  (Crashlytics). These receive a Firebase installation identifier, basic device information and, for a
+  crash, the technical details of the failure.</li>
+  <li><strong>Advertising attribution.</strong> So we can tell which campaign an install came from: on iPhone,
+  an Apple AdServices token from an Apple Search Ads campaign is passed to RevenueCat; on Android, the Google
+  Play install referrer and the device's advertising ID are passed to RevenueCat. You can reset or delete the
+  advertising ID in your Android settings.</li>
+  <li><strong>Reports.</strong> If you report a design in the Android app, the reason you chose and your device
+  identifier are recorded so we can review it.</li>
 </ul>
 
 <h2>What we do not do</h2>
@@ -61,21 +74,25 @@ app removes it from your device.</p>
   <li>We do not use your photos to train AI models.</li>
 </ul>
 
-<h2>Camera and photo library</h2>
-<p>Casa AI asks for camera and photo library access only when you choose to add a photo, and only the photos
-you pick are read. You can withdraw the permission at any time in iOS Settings.</p>
+<h2>Camera and photos</h2>
+<p>On iPhone, HomeGPT asks for camera and photo library access only when you choose to add a photo, and only
+the photos you pick are read; you can withdraw the permission at any time in iOS Settings. On Android, photos
+are chosen through the system photo picker and the system camera, so the app can only see the single photo
+you select and needs no permission to your library. Saving a design writes it to your own gallery.</p>
 
 <h2>Service providers</h2>
 <ul>
-  <li><strong>fal.ai</strong> — AI image generation. Photos are processed here.</li>
+  <li><strong>kie.ai</strong> — AI image generation. Photos are processed here.</li>
+  <li><strong>Google (Gemini API)</strong> — reading the room and the finished design.</li>
   <li><strong>Railway</strong> — hosting for our server.</li>
   <li><strong>RevenueCat</strong> — subscription management.</li>
-  <li><strong>Google Firebase</strong> — remote configuration.</li>
-  <li><strong>Apple</strong> — payments, and Search Ads attribution where applicable.</li>
+  <li><strong>Google Firebase</strong> — remote configuration, analytics and crash reports.</li>
+  <li><strong>Apple</strong> and <strong>Google Play</strong> — payments, and campaign attribution where
+  applicable.</li>
 </ul>
 
 <h2>Children</h2>
-<p>Casa AI is not directed at children under 13, and we do not knowingly collect information from them.</p>
+<p>HomeGPT is not directed at children under 13, and we do not knowingly collect information from them.</p>
 
 <h2>Your choices</h2>
 <p>Because we hold no account and no personal profile, there is nothing tied to your identity for us to export
@@ -89,7 +106,7 @@ associated with your usage cleared sooner than its automatic 24-hour expiry, wri
 <p>Questions about privacy: <a href="mailto:atakan94@yahoo.com">atakan94@yahoo.com</a></p>
 
 <footer>
-  Casa AI · <a href="support.html">Support</a>
+  HomeGPT · <a href="support.html">Support</a>
 </footer>
 
 </body>
